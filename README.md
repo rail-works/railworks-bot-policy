@@ -1,2 +1,0 @@
-# railworks-bot-policy
-Index
