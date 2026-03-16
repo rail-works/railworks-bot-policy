@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- CHANGE THIS GOOGLE FONT IF YOU WANT A DIFFERENT FONT -->
+  <!-- Change this font if you want -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <title>Rail.Works Bot - Privacy Policy</title>
 
@@ -18,54 +18,132 @@
       --panel-2: #31303a;
       --border: #3c3a45;
       --text: #ffffff;
-      --muted: #d6d6d6;
-      --shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      --muted: #cfcfcf;
+      --accent: #f15f0a;
+      --shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+      --radius: 18px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: var(--bg);
+      background: linear-gradient(180deg, #212026 0%, #1c1b21 100%);
       color: var(--text);
-      font-family: "Montserrat", Arial, sans-serif; /* CHANGE FONT HERE */
+      font-family: "Montserrat", Arial, sans-serif;
       line-height: 1.8;
     }
 
-    .wrap {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(33, 32, 38, 0.88);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .nav-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nav-title {
+      font-weight: 700;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-color: rgba(241, 95, 10, 0.5);
+      background: rgba(241, 95, 10, 0.08);
     }
 
     .hero {
-      background: var(--panel);
+      margin-top: 28px;
+      background: linear-gradient(180deg, var(--panel) 0%, #27262d 100%);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
+      border-radius: 24px;
+      padding: 32px;
       box-shadow: var(--shadow);
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 18px;
-      margin-bottom: 20px;
+      gap: 20px;
       flex-wrap: wrap;
+      margin-bottom: 22px;
     }
 
     .logo {
-      width: 84px;
-      height: 84px;
-      border-radius: 16px;
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
+      overflow: hidden;
       border: 1px solid var(--border);
       background: var(--panel-2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
       flex-shrink: 0;
     }
 
@@ -73,130 +151,203 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    .logo-placeholder {
-      font-size: 12px;
-      color: var(--muted);
-      text-align: center;
-      padding: 8px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+    .brand-text {
+      min-width: 0;
     }
 
     h1 {
       margin: 0;
-      font-size: 30px;
-      color: var(--text);
-    }
-
-    h2 {
-      margin-top: 26px;
-      font-size: 22px;
-      color: var(--text);
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .subtitle {
-      margin: 6px 0 0;
+      margin: 8px 0 0;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .card {
-      background: var(--panel-2);
+    .content {
+      background: linear-gradient(180deg, var(--panel-2) 0%, #2d2c35 100%);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-top: 18px;
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    h2 {
+      margin: 28px 0 10px;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
     }
 
     p, li {
       color: var(--text);
+      margin: 0 0 12px;
     }
 
-    a {
-      color: #ffffff;
-      text-decoration: none;
+    ul {
+      margin: 0 0 12px 20px;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
     }
 
-    .back {
+    .button {
       display: inline-block;
-      margin-top: 18px;
-      padding: 10px 14px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--panel);
+      background: linear-gradient(180deg, #2a2931 0%, #27262d 100%);
+      transition: 0.18s ease;
     }
 
-    footer {
-      margin: 24px 0 10px;
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(241, 95, 10, 0.6);
+      background:
+        linear-gradient(
+          to top,
+          rgba(241, 95, 10, 0.38) 0%,
+          rgba(241, 95, 10, 0.14) 40%,
+          rgba(241, 95, 10, 0.00) 100%
+        ),
+        linear-gradient(180deg, #2a2931 0%, #27262d 100%);
+      box-shadow: 0 8px 22px rgba(241, 95, 10, 0.15);
+    }
+
+    .footer {
+      margin-top: 24px;
       text-align: center;
       color: var(--muted);
       font-size: 14px;
+      padding: 8px 0;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .nav-title {
+        white-space: normal;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <img src="../RailWorks.png" alt="Rail.Works Logo">
+        </div>
+        <div class="nav-title">Rail.Works Bot Policies</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../">Home</a>
+        <a href="../terms/">Terms</a>
+        <a href="./" class="active">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
     <section class="hero">
       <div class="brand">
-        <!-- IF YOU HAVE A LOGO, REPLACE THIS BLOCK WITH:
         <div class="logo">
-          <img src="../logo.png" alt="Rail.Works Logo">
-        </div>
-        -->
-        <div class="logo">
-          <img src="RailWorks.png" alt="Rail.Works Logo">
+          <img src="../RailWorks.png" alt="Rail.Works Logo">
         </div>
 
-        <div>
-          <h1>Rail.Works Bot - Privacy Policy</h1>
+        <div class="brand-text">
+          <h1>Privacy Policy</h1>
           <p class="subtitle">Last updated: 16 March 2026</p>
         </div>
       </div>
 
-      <div class="card">
-        <p>This Privacy Policy explains what information the Rail.Works Discord bot (“Bot”) may process when used in a Discord server.</p>
+      <div class="content">
+        <p>
+          This Privacy Policy explains what information the Rail.Works Discord bot (“Bot”) may process when used in a Discord server and how that information is handled.
+        </p>
 
         <h2>1. Information We May Process</h2>
-        <p>The Bot may process basic Discord-related data required for its functionality, such as:</p>
+        <p>The Bot may process limited Discord-related data necessary for functionality, including:</p>
         <ul>
           <li>Discord user IDs</li>
           <li>Discord server IDs</li>
           <li>Discord channel IDs</li>
-          <li>Message content where necessary for bot features (such as tickets, moderation logs, reports, or support systems)</li>
+          <li>Message content where required for features such as tickets, moderation logs, reports, support systems, or transcripts</li>
           <li>Command usage and interaction data</li>
+          <li>Configuration data needed for server-specific bot features</li>
         </ul>
 
         <h2>2. Why We Process This Information</h2>
-        <p>This information is used solely to provide the Bot’s features, including server utilities, moderation tools, ticket systems, support workflows, logging, and administrative functionality.</p>
+        <p>
+          This data is processed solely to provide the Bot’s features, including moderation tools, ticket systems, support workflows, logs, administrative utilities, anti-abuse systems, and server-specific configuration.
+        </p>
 
         <h2>3. Data Sharing</h2>
-        <p>We do not sell personal data. Data processed by the Bot is only used for the operation of the Bot and may be visible to authorized server staff depending on how the Bot is configured.</p>
+        <p>
+          We do not sell personal data. Data processed by the Bot is only used for the operation of the Bot and may be visible to authorized server staff depending on how the Bot is configured and what features are enabled.
+        </p>
 
         <h2>4. Data Retention</h2>
-        <p>Data may be stored only as long as necessary for the Bot’s functionality, moderation purposes, logs, transcripts, configuration requirements, or abuse prevention. Some data may be deleted automatically depending on feature design.</p>
+        <p>
+          Data may be stored only for as long as reasonably necessary for functionality, moderation, logging, transcripts, configuration, debugging, or abuse prevention. Some data may be deleted automatically depending on how features are designed or configured.
+        </p>
 
         <h2>5. Security</h2>
-        <p>We take reasonable steps to protect data processed by the Bot, but no system can be guaranteed to be completely secure.</p>
+        <p>
+          We take reasonable steps to protect data processed by the Bot. However, no system can be guaranteed to be completely secure, and use of the Bot is at your own risk.
+        </p>
 
-        <h2>6. Your Rights</h2>
-        <p>If you have concerns about data processed by the Bot, please contact the Rail.Works team through the appropriate support channels. Requests may be handled depending on technical feasibility and operational requirements.</p>
+        <h2>6. Server Administrator Responsibility</h2>
+        <p>
+          Server owners and administrators are responsible for how they configure the Bot, including permissions, access to logs, transcript visibility, moderation features, and any stored outputs generated within their server.
+        </p>
 
-        <h2>7. Changes to This Policy</h2>
-        <p>This Privacy Policy may be updated from time to time. Continued use of the Bot after changes means you accept the updated policy.</p>
+        <h2>7. Your Rights</h2>
+        <p>
+          If you have concerns about data processed by the Bot, please contact the Rail.Works team through the appropriate support channels. Requests may be reviewed based on technical feasibility, operational necessity, and legitimate moderation or security needs.
+        </p>
 
-        <a class="back" href="../">← Back to policy index</a>
+        <h2>8. Changes to This Policy</h2>
+        <p>
+          This Privacy Policy may be updated from time to time. Continued use of the Bot after changes are published constitutes acceptance of the revised policy.
+        </p>
+
+        <div class="actions">
+          <a class="button" href="../">← Back to Home</a>
+          <a class="button" href="../terms/">View Terms of Service</a>
+        </div>
       </div>
     </section>
 
-    <footer>
+    <div class="footer">
       © 2026 Rail.Works • Privacy Policy • Hosted via GitHub Pages
-    </footer>
-  </div>
+    </div>
+  </main>
 </body>
 </html>
